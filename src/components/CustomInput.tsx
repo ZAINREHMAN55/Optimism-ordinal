@@ -39,7 +39,7 @@ const StyledInput = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const CustomInput = ({ label, placeholder, onChangeInput }) => {
+const CustomInput = ({ label, placeholder }) => {
   return (
     <FormControl variant="standard" style={{ width: "100%" }}>
       <Grid container alignItems="center" justifyContent="center" spacing={2}>
@@ -47,7 +47,7 @@ const CustomInput = ({ label, placeholder, onChangeInput }) => {
           <div className="text-[16px] mr-[16px]">{label}</div>
         </Grid>
         <Grid item xs={9}>
-          <StyledInput onChange={(e) => {onChangeInput(e.target.value)}} fullWidth placeholder={placeholder} />
+          <StyledInput fullWidth placeholder={placeholder} />
         </Grid>
       </Grid>
     </FormControl>

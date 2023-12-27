@@ -3,7 +3,6 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { Paper, InputBase, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
 
 const StyledPaper = styled(Paper)({
   display: "flex",
@@ -37,22 +36,14 @@ const StyledIconButton = styled(IconButton)({
 });
 
 export default function SearchButton() {
-  const [query, setQuery] = useState("");
-
-  const handleSearch = () => {
-    if (query && query.length > 0) {
-    
-    }
-  };
-
   return (
     <StyledPaper>
       <StyledInputBase
         placeholder="search inscription/wallet"
         inputProps={{ "aria-label": "search inscription/wallet" }}
       />
-      <StyledIconButton aria-label="search" onClick={handleSearch}>
-        <SearchIcon sx={{ color: "#FFD700" }} className="mr-[10px]" />
+      <StyledIconButton type="submit" aria-label="search">
+        <SearchIcon sx={{ color: "#FFD700" }} />{" "}
       </StyledIconButton>
     </StyledPaper>
   );
