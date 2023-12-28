@@ -355,17 +355,7 @@ export const listed: listedInterface[] = [
 ]
 
 // data.ts
-export interface ListedItem {
-    amount: number;
-    ton_per_nano: number;
-    price_per_ton: number;
-    seller: string;
-    ton_quantity: number;
-    total_price: number;
-  }
-  
-  export const listedd: ListedItem[] = [
-    {
+export interface ListedItem  {
           Tick	: string;
     Total_Value: number;
     Price: number;
@@ -374,6 +364,18 @@ export interface ListedItem {
     Buyer: string;
     Hash: number;
     Time: number;
+    }
+  
+  export const listedd: ListedItem[] = [
+  {
+   "Tick": "nano";
+    "Total_Value": 6 TON;
+    "Price: 0.0012 TON $0.00262;
+    "Amount": 5000;
+    "Seller": "UQBQ...oW5a";
+    "Buyer": "UQDI...nwHa";
+    "Hash": 1067B5...D7EC30;
+    "Time": 2023/12/28 17:26:13;
     },
     {
    "Tick": "nano";
