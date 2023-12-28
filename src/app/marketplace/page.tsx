@@ -3,7 +3,7 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 
 import {
@@ -81,7 +81,6 @@ const MyTabs = styled(Tabs)({
     height: "0",
   },
 });
-
 const MarketPlaceSelect = styled(Select)({
   backgroundColor: "#121212",
   color: "#fff",
@@ -148,10 +147,9 @@ const MarketPlacePagination = styled(Pagination)({
   },
 
   ".Mui-selected": {
-    backgroundColor: "#4B4B4B",
+    backgroundColor: "#4B4B4B !important",
   },
 });
-
 
 const Marketplace = () => {
   const [value, setValue] = React.useState(0);
@@ -223,8 +221,8 @@ const Marketplace = () => {
     <div className="flex flex-col items-center justify-center py-[40px] container mx-auto">
       <Box sx={{ width: "100%" }}>
         <Box sx={{ width: "100%" }}>
-          <div className="mt-8 flex md:flex-row flex-wrap items-center px-2">
-            <div className="mr-[16px] ">
+          <div className="mt-8 gap-4  flex md:flex-row flex-wrap items-center px-[20px] md:px-2">
+            <div className="  ">
               <MarketPlaceSelect
                 value={coin}
                 onChange={handleInputChange}
@@ -246,7 +244,8 @@ const Marketplace = () => {
               value={value}
               onChange={handleChange}
               aria-label="basic tabs example"
-              className="order-3 md:order-[unset] w-full m-0   md:w-auto"
+              sx={{ width: matches900px ? "auto" : "100%", margin: 0 }}
+              className="order-3 md:order-[unset]  "
             >
               <MyTab label="Listed" {...a11yProps(0)} />
               <MyTab label="My Orders" {...a11yProps(1)} />
@@ -254,7 +253,7 @@ const Marketplace = () => {
             </MyTabs>
             <div className="flex-1"> </div>
 
-            <MarketPlaceSortSelect sx={{ m: 1, minWidth: 120 }} size="small">
+            <MarketPlaceSortSelect sx={{ minWidth: 120 }} size="small">
               <InputLabel id="sort-label">Sort</InputLabel>
               <Select
                 labelId="sort-label"
@@ -268,19 +267,17 @@ const Marketplace = () => {
               </Select>
             </MarketPlaceSortSelect>
 
-            {matches900px && (
-              <button className="bg-[#0098ea]  hover:scale-10 text-[#fff] text-lg font-bold py-2 px-[24px] rounded-full inline-flex items-center">
-                Quick List
-              </button>
-            )}
+            <button className="bg-[#0098ea]  hover:scale-10 text-[#fff] text-lg font-bold py-2 px-[24px] rounded-full  md:inline-flex hidden items-center">
+              Quick List
+            </button>
           </div>
         </Box>
 
         <CustomTabPanel value={value} index={0}>
           <Box>
-            <Box className="flex flex-row mt-16 mb-16">
-              <div className="bg-none text-white transition-shadow border border-opacity-25 overflow-x-scroll  rounded-lg py-[16px]">
-                <div className="flex flex-row items-center">
+            <Box className="flex flex-row md:mt-16 mt-0 mb-16">
+              <div className="bg-none text-white transition-shadow border border-opacity-25 overflow-x-auto  rounded-lg py-[16px]">
+                <div className="flex flex-row items-center h-full">
                   <h5 className="m-0 text-1.5xl leading-1.334 text-yellow-400 font-bold pl-6">
                     {coin}
                   </h5>
@@ -292,15 +289,11 @@ const Marketplace = () => {
                     <p className="m-0 font-normal text-xs leading-1.43 whitespace-nowrap">
                       434,059.403 Ton
                     </p>
-                    <span className="m-0 font-normal text-xs leading-1.66 text-white opacity-45 whitespace-nowrap">
+                    <span className="m-0 font-normal text-xs leading-1.66 text-[#939393] opacity-45 whitespace-nowrap">
                       ≈ $941,908.904
                     </span>
                   </div>
-                  <Divider
-                    orientation="vertical"
-                    flexItem
-                    className="m-0 mx-4 flex-shrink-0 border-t border-r border-b border-opacity-25 border-white"
-                  />
+                  <hr className="m-0 mx-4 flex-shrink-0 border-t border-r border-b border-opacity-25 border-white h-full" />
                   {/* --- Hour Vol ---  */}
                   <div className="  text-center">
                     <p className="m-0 font-normal text-base leading-1.5 whitespace-nowrap">
@@ -309,15 +302,11 @@ const Marketplace = () => {
                     <p className="m-0 font-normal text-xs leading-1.43 whitespace-nowrap">
                       31,431.885 TON
                     </p>
-                    <span className="m-0 font-normal text-xs leading-1.66 text-white opacity-45 whitespace-nowrap">
+                    <span className="m-0 font-normal text-xs leading-1.66 text-[#939393] opacity-45 whitespace-nowrap">
                       ≈ $68,207.19
                     </span>
                   </div>
-                  <Divider
-                    orientation="vertical"
-                    flexItem
-                    className="m-0 mx-4 flex-shrink-0 border-t border-r border-b border-opacity-25 border-white"
-                  />
+                  <hr className="m-0 mx-4 flex-shrink-0 border-t border-r border-b border-opacity-25 border-white h-full" />
                   {/* ---Floor Price ---  */}
                   <div className="  text-center">
                     <p className="m-0 font-normal text-base leading-1.5 whitespace-nowrap">
@@ -326,15 +315,11 @@ const Marketplace = () => {
                     <p className="m-0 font-normal text-xs leading-1.43 whitespace-nowrap">
                       0.00155 TON
                     </p>
-                    <span className="m-0 font-normal text-xs leading-1.66 text-white opacity-45 whitespace-nowrap">
+                    <span className="m-0 font-normal text-xs leading-1.66 text-[#939393] opacity-45 whitespace-nowrap">
                       ≈ $0.0033635
                     </span>
                   </div>
-                  <Divider
-                    orientation="vertical"
-                    flexItem
-                    className="m-0 mx-4 flex-shrink-0 border-t border-r border-b border-opacity-25 border-white"
-                  />
+                  <hr className="m-0 mx-4 flex-shrink-0 border-t border-r border-b border-opacity-25 border-white h-full" />
                   {/* ---Floor Price ---  */}
                   <div className="text-center pr-[24px]">
                     <p className="m-0 font-normal text-base leading-1.5 whitespace-nowrap">
@@ -343,14 +328,13 @@ const Marketplace = () => {
                     <p className="m-0 font-normal text-xs leading-1.43 whitespace-nowrap">
                       3,255,000 TON
                     </p>
-                    <span className="m-0 font-normal text-xs leading-1.66 text-white opacity-45 whitespace-nowrap">
+                    <span className="m-0 font-normal text-xs leading-1.66 text-[#939393] opacity-45 whitespace-nowrap">
                       ≈ $7,063,350
                     </span>
                   </div>
                 </div>
               </div>
             </Box>
-
             <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {currentPageItems.map((item: any, index: number) => (
                 <ListedTabs items={item} key={index} coin={coin} />
@@ -371,7 +355,7 @@ const Marketplace = () => {
           <center>No listing</center>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-          <Activites/>
+          <Activites />
         </CustomTabPanel>
       </Box>
     </div>
