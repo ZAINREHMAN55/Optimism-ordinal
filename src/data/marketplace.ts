@@ -363,29 +363,29 @@ export interface ListedItem {
   Seller: string;
   Buyer: string;
   Hash: number;
-  Time: number;
+  Time: Date; // Change the type to Date
 }
 
 export const listedd: ListedItem[] = [
   {
     Tick: "nano",
-    Total_Value: 6, // Assuming this is a numeric value
-    Price: 0.0012, // Assuming this is a numeric value
+    Total_Value: 6,
+    Price: 0.0012,
     Amount: 5000,
     Seller: "UQBQ...oW5a",
     Buyer: "UQDI...nwHa",
-    Hash: 1067, // Assuming this is a numeric value
-    Time: 1640711173000, // Assuming this is a valid timestamp in milliseconds
+    Hash: 1067,
+    Time: new Date(1640732400000), // Convert timestamp to a Date object
   },
   {
     Tick: "nano",
-    Total_Value: 6, // Assuming this is a numeric value
-    Price: 0.0012, // Assuming this is a numeric value
+    Total_Value: 6,
+    Price: 0.0012,
     Amount: 5000,
     Seller: "UQBQ...oW5a",
     Buyer: "UQDI...nwHa",
-    Hash: 1067, // Assuming this is a numeric value
-    Time: 1640711173000, // Assuming this is a valid timestamp in milliseconds
+    Hash: 1067,
+    Time: new Date(1640732500000), // Convert timestamp to a Date object
   },
 ];
 
