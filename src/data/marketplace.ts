@@ -377,7 +377,7 @@ export interface ListedItem {
     },
     {
    Tick: "nano";
-    Total Value: 6 TON;
+    Total_Value: 6 TON;
     Price: 0.0012 TON $0.00262;
     Amount: 5000;
     Seller: "UQBQ...oW5a";
