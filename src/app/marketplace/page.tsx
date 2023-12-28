@@ -365,34 +365,35 @@ const Marketplace = () => {
           Item Two
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-        <table>
-        <thead>
-          <tr>
-            <th>Tick</th>
-            <th>Total Value</th>
-            <th>Price</th>
-            <th>Amount	</th>
-            <th>Seller</th>
-            <th>Buyer</th>
-            <th>Hash</th>
-            <th>Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          {listedd.map((item, index) => (
-            <tr key={index}>
-              <td>{item.Tick}</td>
-              <td>{item.Total_Value}</td>
-              <td>{item.Price}</td>
-              <td>{item.Amount}</td>
-              <td>{item.Seller}</td>
-              <td>{item.Buyer}</td>
-              <td>{item.Hash}</td>
-              <td>{item.Time}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+<table>
+  <thead>
+    <tr>
+      <th>Tick</th>
+      <th>Total Value</th>
+      <th>Price</th>
+      <th>Amount</th>
+      <th>Seller</th>
+      <th>Buyer</th>
+      <th>Hash</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    {listedd.map((item, index) => (
+      <tr key={index}>
+        <td>{item.Tick}</td>
+        <td>{item.Total_Value}</td>
+        <td>{item.Price}</td>
+        <td>{item.Amount}</td>
+        <td>{item.Seller}</td>
+        <td>{item.Buyer}</td>
+        <td>{item.Hash}</td>
+        <td>{new Date(item.Time).toLocaleString()}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
           
         </CustomTabPanel>
       </Box>
