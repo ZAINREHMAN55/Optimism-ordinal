@@ -84,7 +84,13 @@ function Activites() {
                 <tbody>
                     {currentItems.map((item, index) => (
                         <tr key={index} className={index % 2 === 0 ? '' : ''}>
-                            <StyledTd className='text-yellow-400'>{item.Tick}</StyledTd>
+                        
+                        <StyledTd style={{ color: 'rgb(246, 174, 45)',    padding: "2px",
+                        textAlign: "center",
+                        fontWeight: "medium",
+                        fontSize: "1.2rem",
+                        lineHeight: "1.6",
+                        fontFamily: '-apple-system, monospace, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"', }}>{item.Tick}</StyledTd>
                             <StyledTd>{item.Total_Value}</StyledTd>
                             <StyledTd>{item.Price}<br /><span className="mt-5 font-normal text-sm text-gray-400 text-center">{item.span}</span></StyledTd>
                             <StyledTd>{item.Amounts}</StyledTd>
