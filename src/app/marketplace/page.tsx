@@ -368,12 +368,14 @@ const Marketplace = () => {
         <table>
         <thead>
           <tr>
-            <th>Amount</th>
-            <th>Ton per Nano</th>
-            <th>Price per Ton</th>
-            <th>Seller</th>
-            <th>Ton Quantity</th>
-            <th>Total Price</th>
+            <th>Tick</th>
+            <th>Total Value</th>
+            <th>Price</th>
+            <th>Amount	</th>
+            <th>	Seller</th>
+            <th>Buyer</th>
+            <th>Hash</th>
+            <th>Time</th>
           </tr>
         </thead>
         <tbody>
