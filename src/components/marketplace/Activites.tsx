@@ -50,7 +50,7 @@ const StyledTd = styled('td')({
     fontSize: "1.2rem",
     lineHeight: "1.6",
     fontFamily: '-apple-system, monospace, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    color: "#fff",
+    
 });
 
 function Activites() {
@@ -70,7 +70,7 @@ function Activites() {
             <StyledTable>
                 <thead>
                     <tr>
-                        <StyledTh className="text-yellow-400">Tick</StyledTh>
+                        <StyledTh>Tick</StyledTh>
                         <StyledTh>Total Value</StyledTh>
                         <StyledTh>Price</StyledTh>
                         <StyledTh>Amount</StyledTh>
