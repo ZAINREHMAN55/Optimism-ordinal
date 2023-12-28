@@ -388,7 +388,8 @@ const Marketplace = () => {
         <td>{item.Seller}</td>
         <td>{item.Buyer}</td>
         <td>{item.Hash}</td>
-        <td>{new Date(item.Time).toLocaleString()}</td>
+        <td>{item.Time.toLocaleString()}</td>
+
       </tr>
     ))}
   </tbody>
