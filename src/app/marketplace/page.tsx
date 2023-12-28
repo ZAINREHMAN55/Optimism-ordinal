@@ -389,7 +389,7 @@ const Marketplace = () => {
           ))}
         </tbody>
       </table>
-          <TableComponent data={listed} />
+          
         </CustomTabPanel>
       </Box>
     </div>
