@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab"; 
+import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import {
@@ -14,8 +14,9 @@ import {
   SelectChangeEvent,
   useMediaQuery,
 } from "@mui/material";
+
 import ListedTabs from "@/components/marketplace/ListedTab";
-import { listed } from "@/data/marketplace";
+import { listed, listedd, ListedItem   } from "@/data/marketplace"; // Import ListedItem interface
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -178,6 +179,40 @@ const Marketplace = () => {
 
   const matches900px = useMediaQuery("(min-width:900px)");
 
+  // Define the TableProps interface here
+  interface TableProps {
+    data: ListedItem[];
+  }
+
+  const TableComponent: React.FC<TableProps> = ({ data }) => {
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th className="py-2 px-4 border-b">Amount</th>
+            <th className="py-2 px-4 border-b">Ton per Nano</th>
+            <th className="py-2 px-4 border-b">Price per Ton</th>
+            <th className="py-2 px-4 border-b">Seller</th>
+            <th className="py-2 px-4 border-b">Ton Quantity</th>
+            <th className="py-2 px-4 border-b">Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item, index) => (
+            <tr key={index}>
+              <td className="py-2 px-4 border-b">{item.amount}</td>
+              <td className="py-2 px-4 border-b">{item.ton_per_nano}</td>
+              <td className="py-2 px-4 border-b">{item.price_per_ton}</td>
+              <td className="py-2 px-4 border-b">{item.seller}</td>
+              <td className="py-2 px-4 border-b">{item.ton_quantity}</td>
+              <td className="py-2 px-4 border-b">{item.total_price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };
+
   return (
     <div className="flex flex-col items-center justify-center py-[40px] container mx-auto">
       <Box sx={{ width: "100%" }}>
@@ -330,10 +365,35 @@ const Marketplace = () => {
           Item Two
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-          Item Three
+        <table>
+        <thead>
+          <tr>
+            <th>Amount</th>
+            <th>Ton per Nano</th>
+            <th>Price per Ton</th>
+            <th>Seller</th>
+            <th>Ton Quantity</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listedd.map((item, index) => (
+            <tr key={index}>
+              <td>{item.amount}</td>
+              <td>{item.ton_per_nano}</td>
+              <td>{item.price_per_ton}</td>
+              <td>{item.seller}</td>
+              <td>{item.ton_quantity}</td>
+              <td>{item.total_price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+          <TableComponent data={listed} />
         </CustomTabPanel>
       </Box>
     </div>
   );
 };
+
 export default Marketplace;

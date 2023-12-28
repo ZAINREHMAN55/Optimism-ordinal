@@ -354,3 +354,32 @@ export const listed: listedInterface[] = [
     }
 ]
 
+// data.ts
+export interface ListedItem {
+    amount: number;
+    ton_per_nano: number;
+    price_per_ton: number;
+    seller: string;
+    ton_quantity: number;
+    total_price: number;
+  }
+  
+  export const listedd: ListedItem[] = [
+    {
+      amount: 1000000,
+      ton_per_nano: 0.00158,
+      price_per_ton: 0.0034444,
+      seller: "UQDr...qxsy",
+      ton_quantity: 1580,
+      total_price: 3444.4,
+    },
+    {
+      amount: 950000,
+      ton_per_nano: 0.00165,
+      price_per_ton: 0.0036000,
+      seller: "XWEp...lmno",
+      ton_quantity: 1420,
+      total_price: 3240.0,
+    },
+  ];
+  
