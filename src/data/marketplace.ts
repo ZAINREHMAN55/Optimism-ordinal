@@ -367,7 +367,7 @@ export interface ListedItem {
   export const listedd: ListedItem[] = [
     {
           Tick	: string;
-    Total Value: number;
+    Total_Value: number;
     Price: number;
     Amount: number;
     Seller: string;
@@ -376,14 +376,14 @@ export interface ListedItem {
     Time: number;
     },
     {
-   Tick: "nano";
-    Total_Value: 6 TON;
-    Price: 0.0012 TON $0.00262;
-    Amount: 5000;
-    Seller: "UQBQ...oW5a";
-    Buyer: "UQDI...nwHa";
-    Hash: 1067B5...D7EC30;
-    Time: 2023/12/28 17:26:13;
+   "Tick": "nano";
+    "Total_Value": 6 TON;
+    "Price: 0.0012 TON $0.00262;
+    "Amount": 5000;
+    "Seller": "UQBQ...oW5a";
+    "Buyer": "UQDI...nwHa";
+    "Hash": 1067B5...D7EC30;
+    "Time": 2023/12/28 17:26:13;
     },
   ];
   
