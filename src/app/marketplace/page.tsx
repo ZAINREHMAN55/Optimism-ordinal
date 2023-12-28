@@ -372,7 +372,7 @@ const Marketplace = () => {
             <th>Total Value</th>
             <th>Price</th>
             <th>Amount	</th>
-            <th>	Seller</th>
+            <th>Seller</th>
             <th>Buyer</th>
             <th>Hash</th>
             <th>Time</th>
@@ -381,12 +381,14 @@ const Marketplace = () => {
         <tbody>
           {listedd.map((item, index) => (
             <tr key={index}>
-              <td>{item.amount}</td>
-              <td>{item.ton_per_nano}</td>
-              <td>{item.price_per_ton}</td>
-              <td>{item.seller}</td>
-              <td>{item.ton_quantity}</td>
-              <td>{item.total_price}</td>
+              <td>{item.Tick}</td>
+              <td>{item.Total_Value}</td>
+              <td>{item.Price}</td>
+              <td>{item.Amount}</td>
+              <td>{item.Seller}</td>
+              <td>{item.Buyer}</td>
+              <td>{item.Hash}</td>
+              <td>{item.Time}</td>
             </tr>
           ))}
         </tbody>
