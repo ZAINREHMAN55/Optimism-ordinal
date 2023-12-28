@@ -355,37 +355,38 @@ export const listed: listedInterface[] = [
 ]
 
 // data.ts
-export interface ListedItem  {
-          Tick	: string;
-    Total_Value: number;
-    Price: number;
-    Amount: number;
-    Seller: string;
-    Buyer: string;
-    Hash: number;
-    Time: number;
-    }
-  
-  export const listedd: ListedItem[] = [
+export interface ListedItem {
+  Tick: string;
+  Total_Value: number;
+  Price: number;
+  Amount: number;
+  Seller: string;
+  Buyer: string;
+  Hash: number;
+  Time: number;
+}
+
+export const listedd: ListedItem[] = [
   {
-   "Tick": "nano";
-    "Total_Value": 6 TON;
-    "Price: 0.0012 TON $0.00262;
-    "Amount": 5000;
-    "Seller": "UQBQ...oW5a";
-    "Buyer": "UQDI...nwHa";
-    "Hash": 1067B5...D7EC30;
-    "Time": 2023/12/28 17:26:13;
-    },
-    {
-   "Tick": "nano";
-    "Total_Value": 6 TON;
-    "Price: 0.0012 TON $0.00262;
-    "Amount": 5000;
-    "Seller": "UQBQ...oW5a";
-    "Buyer": "UQDI...nwHa";
-    "Hash": 1067B5...D7EC30;
-    "Time": 2023/12/28 17:26:13;
-    },
-  ];
+    Tick: "nano",
+    Total_Value: 6, // Assuming this is a numeric value
+    Price: 0.0012, // Assuming this is a numeric value
+    Amount: 5000,
+    Seller: "UQBQ...oW5a",
+    Buyer: "UQDI...nwHa",
+    Hash: 1067, // Assuming this is a numeric value
+    Time: 1640711173000, // Assuming this is a valid timestamp in milliseconds
+  },
+  {
+    Tick: "nano",
+    Total_Value: 6, // Assuming this is a numeric value
+    Price: 0.0012, // Assuming this is a numeric value
+    Amount: 5000,
+    Seller: "UQBQ...oW5a",
+    Buyer: "UQDI...nwHa",
+    Hash: 1067, // Assuming this is a numeric value
+    Time: 1640711173000, // Assuming this is a valid timestamp in milliseconds
+  },
+];
+
   
