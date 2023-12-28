@@ -366,20 +366,24 @@ export interface ListedItem {
   
   export const listedd: ListedItem[] = [
     {
-      amount: 1000000,
-      ton_per_nano: 0.00158,
-      price_per_ton: 0.0034444,
-      seller: "UQDr...qxsy",
-      ton_quantity: 1580,
-      total_price: 3444.4,
+          Tick	: string;
+    Total Value: number;
+    Price: number;
+    Amount: number;
+    Seller: string;
+    Buyer: string;
+    Hash: number;
+    Time: number;
     },
     {
-      amount: 950000,
-      ton_per_nano: 0.00165,
-      price_per_ton: 0.0036000,
-      seller: "XWEp...lmno",
-      ton_quantity: 1420,
-      total_price: 3240.0,
+   Tick: "nano";
+    Total Value: 6 TON;
+    Price: 0.0012 TON $0.00262;
+    Amount: 5000;
+    Seller: "UQBQ...oW5a";
+    Buyer: "UQDI...nwHa";
+    Hash: 1067B5...D7EC30;
+    Time: 2023/12/28 17:26:13;
     },
   ];
   
