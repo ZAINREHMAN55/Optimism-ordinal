@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { listedd } from "@/data/marketplace";
 import Stack from '@mui/material/Stack';
 import Pagination from '@mui/material/Pagination';
-import { styled } from "@mui/system"; // Add this line to import the 'styled' function
+import { styled } from "@mui/system";
 
 const MarketPlacePagination = styled(Pagination)({
     backgroundColor: "#121212",
@@ -28,6 +28,31 @@ const MarketPlacePagination = styled(Pagination)({
     },
 });
 
+const StyledTable = styled('table')({
+    width: "100%",
+    borderCollapse: "collapse",
+});
+
+const StyledTh = styled('th')({
+    padding: "2px",
+    textAlign: "center",
+    fontWeight: "medium",
+    fontSize: "1.2rem",
+    lineHeight: "1.6",
+    fontFamily: '-apple-system, monospace, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    color: "#fff",
+});
+
+const StyledTd = styled('td')({
+    padding: "2px",
+    textAlign: "center",
+    fontWeight: "medium",
+    fontSize: "1.2rem",
+    lineHeight: "1.6",
+    fontFamily: '-apple-system, monospace, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    color: "#fff",
+});
+
 function Activites() {
     const itemsPerPage = 20;
     const [currentPage, setCurrentPage] = useState(1);
@@ -42,35 +67,35 @@ function Activites() {
 
     return (
         <div>
-            <table className="w-full border-collapse">
-                <thead className="">
+            <StyledTable>
+                <thead>
                     <tr>
-                        <th className="p-2 text-left font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">Tick</th>
-                        <th className="p-2 text-left font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">Total Value</th>
-                        <th className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">Price</th>
-                        <th className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">Amount</th>
-                        <th className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">Seller</th>
-                        <th className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">Buyer</th>
-                        <th className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">Hash</th>
-                        <th className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">Time</th>
+                        <StyledTh>Tick</StyledTh>
+                        <StyledTh>Total Value</StyledTh>
+                        <StyledTh>Price</StyledTh>
+                        <StyledTh>Amount</StyledTh>
+                        <StyledTh>Seller</StyledTh>
+                        <StyledTh>Buyer</StyledTh>
+                        <StyledTh>Hash</StyledTh>
+                        <StyledTh>Time</StyledTh>
                     </tr>
                 </thead>
 
                 <tbody>
                     {currentItems.map((item, index) => (
                         <tr key={index} className={index % 2 === 0 ? '' : ''}>
-                            <td className="p-2 text-left font-medium text-1xl leading-6 table-cell align-middle p-4 text-amber-500" >{item.Tick}</td>
-                            <td className="p-2 text-left font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">{item.Total_Value}</td>
-                            <td className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">{item.Price}<br /><span className="mt-5 font-normal text-sm text-gray-400 text-center">{item.span}</span></td>
-                            <td className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">{item.Amounts}</td>
-                            <td className="p-2 text-left font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">{item.Seller}</td>
-                            <td className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">{item.Buyer}</td>
-                            <td className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">{item.Hash}</td>
-                            <td className="p-2 text-center font-medium text-1xl leading-6 table-cell align-middle p-4 text-white">{item.Time}</td>
+                            <StyledTd className='text-yellow-400'>{item.Tick}</StyledTd>
+                            <StyledTd>{item.Total_Value}</StyledTd>
+                            <StyledTd>{item.Price}<br /><span className="mt-5 font-normal text-sm text-gray-400 text-center">{item.span}</span></StyledTd>
+                            <StyledTd>{item.Amounts}</StyledTd>
+                            <StyledTd>{item.Seller}</StyledTd>
+                            <StyledTd>{item.Buyer}</StyledTd>
+                            <StyledTd>{item.Hash}</StyledTd>
+                            <StyledTd>{item.Time}</StyledTd>
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </StyledTable>
             <div className="py-[40px] flex justify-center">
                 <Stack spacing={2}>
                     <MarketPlacePagination
