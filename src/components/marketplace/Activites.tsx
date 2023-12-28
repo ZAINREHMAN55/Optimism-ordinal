@@ -70,7 +70,7 @@ function Activites() {
             <StyledTable>
                 <thead>
                     <tr>
-                        <StyledTh>Tick</StyledTh>
+                        <StyledTh className="my-custom-text-color">Tick</StyledTh>
                         <StyledTh>Total Value</StyledTh>
                         <StyledTh>Price</StyledTh>
                         <StyledTh>Amount</StyledTh>
