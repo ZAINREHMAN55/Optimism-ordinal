@@ -1,7 +1,7 @@
 "use client";
 import { Box, Button } from "@mui/material";
 import { styled } from "@mui/system";
-import React from "react";
+import React, { useState } from 'react';
 import { listedInterface } from "@/data/marketplace";
 const Card = styled(Box)({
   border: "1px solid rgb(38, 35, 35)",

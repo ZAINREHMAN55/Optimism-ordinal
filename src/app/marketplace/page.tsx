@@ -3,7 +3,9 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import Stack from '@mui/material/Stack';
 import { styled } from "@mui/material/styles";
+
 import {
   Divider,
   FormControl,
@@ -16,7 +18,8 @@ import {
 } from "@mui/material";
 
 import ListedTabs from "@/components/marketplace/ListedTab";
-import { listed, listedd, ListedItem   } from "@/data/marketplace"; // Import ListedItem interface
+import { listed, listedd, ListedItem } from "@/data/marketplace"; // Import ListedItem interface
+import Activites from "@/components/marketplace/Activites";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -149,6 +152,7 @@ const MarketPlacePagination = styled(Pagination)({
   },
 });
 
+
 const Marketplace = () => {
   const [value, setValue] = React.useState(0);
   const [sort, setSort] = React.useState("price");
@@ -200,12 +204,14 @@ const Marketplace = () => {
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              <td className="py-2 px-4 border-b">{item.amount}</td>
-              <td className="py-2 px-4 border-b">{item.ton_per_nano}</td>
-              <td className="py-2 px-4 border-b">{item.price_per_ton}</td>
-              <td className="py-2 px-4 border-b">{item.seller}</td>
-              <td className="py-2 px-4 border-b">{item.ton_quantity}</td>
-              <td className="py-2 px-4 border-b">{item.total_price}</td>
+              <td>{item.Tick}</td>
+              <td>{item.Total_Value}</td>
+              <td>{item.Price}</td>
+              <td>{item.Amounts}</td>
+              <td>{item.Seller}</td>
+              <td>{item.Buyer}</td>
+              <td>{item.Hash}</td>
+              <td>{item.Time}</td>
             </tr>
           ))}
         </tbody>
@@ -362,40 +368,10 @@ const Marketplace = () => {
           </Box>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          Item Two
+          <center>No listing</center>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-<table>
-  <thead>
-    <tr>
-      <th>Tick</th>
-      <th>Total Value</th>
-      <th>Price</th>
-      <th>Amount</th>
-      <th>Seller</th>
-      <th>Buyer</th>
-      <th>Hash</th>
-      <th>Time</th>
-    </tr>
-  </thead>
-  <tbody>
-    {listedd.map((item, index) => (
-      <tr key={index}>
-        <td>{item.Tick}</td>
-        <td>{item.Total_Value}</td>
-        <td>{item.Price}</td>
-        <td>{item.Amount}</td>
-        <td>{item.Seller}</td>
-        <td>{item.Buyer}</td>
-        <td>{item.Hash}</td>
-        <td>{item.Time.toLocaleString()}</td>
-
-      </tr>
-    ))}
-  </tbody>
-</table>
-
-          
+          <Activites/>
         </CustomTabPanel>
       </Box>
     </div>
