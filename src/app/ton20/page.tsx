@@ -3,6 +3,7 @@
 import React from "react";
 import dayjs from "dayjs";
 import numeral from "numeral";
+import { Helmet } from "react-helmet";
 import { styled } from "@mui/material/styles";
 import {
   Table,
@@ -56,7 +57,12 @@ const StyledHead = styled(TableHead)(({ theme }) => ({
 
 const StyledRow = styled(TableRow)(({ theme }) => ({
   backgroundColor: "transparent",
-  color: "#fff",
+  color: "transparent",
+  transition: "background-color 0.3s ease",
+
+  "&:hover": {
+    backgroundColor: "#333",
+  },
 }));
 
 const StyledCell = styled(TableCell)(({ theme }) => ({
@@ -65,6 +71,11 @@ const StyledCell = styled(TableCell)(({ theme }) => ({
   padding: 16,
   color: "#fff",
   borderBottom: "none",
+  transition: "background-color 0.3s ease",
+
+  "&:hover": {
+    backgroundColor: "#333",
+  },
 }));
 
 const StyledLineBar = styled(LinearProgress)(({ theme }) => ({
@@ -95,11 +106,11 @@ const TableHeader = () => (
   </StyledHead>
 );
 
+// ... (previous imports)
+
 const TableRowComponent = ({ row }) => (
   <StyledRow>
-    <StyledCell component="th" scope="col" style={{
-        color: "#f6ae2d"
-    }}>
+    <StyledCell component="th" scope="col" style={{ color: "#f6ae2d" }}>
       {row.name}
     </StyledCell>
     <StyledCell align="center" scope="col">
@@ -127,6 +138,9 @@ const TableRowComponent = ({ row }) => (
   </StyledRow>
 );
 
+// ... (rest of your code)
+
+
 const CustomTable = ({ rows }) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -142,6 +156,11 @@ const CustomTable = ({ rows }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Your Page Title</title>
+        {/* Other head elements */}
+      </Helmet>
+
       <div className="capitalize text-[18px] mb-4 text-[#f6ae2d] text-center font-medium line-[12px] tracking-wider">
         The full list of ton-20
       </div>
@@ -187,111 +206,118 @@ export default function Ton20() {
     {
       name: "nano",
       deployTime: "2023/12/01 13:29:26",
-      progress: 67.8,
+      progress: 100,
       holders: 31096,
     },
     {
       name: "nano",
       deployTime: "2023/12/01 13:29:26",
-      progress: 67.8,
+      progress: 100,
       holders: 31096,
     },
     {
       name: "nano",
       deployTime: "2023/12/01 13:29:26",
-      progress: 67.8,
+      progress: 100,
       holders: 31096,
     },
     {
       name: "nano",
       deployTime: "2023/12/01 13:29:26",
-      progress: 67.8,
+      progress: 100,
       holders: 31096,
     },
     {
       name: "nano",
       deployTime: "2023/12/01 13:29:26",
-      progress: 67.8,
+      progress: 100,
       holders: 31096,
     },
     {
       name: "nano",
       deployTime: "2023/12/01 13:29:26",
-      progress: 67.8,
+      progress: 100,
       holders: 31096,
     },
     {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
-      {
-        name: "nano",
-        deployTime: "2023/12/01 13:29:26",
-        progress: 67.8,
-        holders: 31096,
-      },
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    {
+      name: "nano",
+      deployTime: "2023/12/01 13:29:26",
+      progress: 100,
+      holders: 31096,
+    },
+    // ... (rest of your data)
   ];
 
   return (

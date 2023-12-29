@@ -20,6 +20,7 @@ import {
 import ListedTabs from "@/components/marketplace/ListedTab";
 import { listed, listedd, ListedItem } from "@/data/marketplace"; // Import ListedItem interface
 import Activites from "@/components/marketplace/Activites";
+import Nano from "@/components/ton/Nano";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -352,7 +353,7 @@ const Marketplace = () => {
           </Box>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <center>No listing</center>
+          <Nano/>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
           <Activites />
