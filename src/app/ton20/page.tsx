@@ -112,7 +112,7 @@ const TableHeader = () => (
 const TableRowComponent = ({ row }) => (
   <StyledRow>
     {/* can also use Dyanmic route like this `/ton20/${row.name}` */}
-    <Link href={`/ton20/nano`}> 
+     <Link style={{width:"100% "}} href={`/ton20/nano`}> 
     <StyledCell component="th" scope="col" style={{ color: "#f6ae2d" }}>
       {row.name}
     </StyledCell>
