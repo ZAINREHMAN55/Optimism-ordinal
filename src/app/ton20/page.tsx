@@ -19,6 +19,7 @@ import {
 import { IoIosArrowForward } from "react-icons/io";
 
 import SearchBox from "@/components/SearchBox";
+import Link from "next/link";
 
 const StyledPaper = styled(Paper)({
   marginTop: 32,
@@ -110,6 +111,8 @@ const TableHeader = () => (
 
 const TableRowComponent = ({ row }) => (
   <StyledRow>
+    {/* can also use Dyanmic route like this `/ton20/${row.name}` */}
+    <Link href={`/ton20/nano`}> 
     <StyledCell component="th" scope="col" style={{ color: "#f6ae2d" }}>
       {row.name}
     </StyledCell>
@@ -135,6 +138,7 @@ const TableRowComponent = ({ row }) => (
     >
       <IoIosArrowForward align="right" size={20} />
     </StyledCell>
+  </Link>
   </StyledRow>
 );
 

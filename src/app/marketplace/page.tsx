@@ -20,7 +20,7 @@ import {
 import ListedTabs from "@/components/marketplace/ListedTab";
 import { listed, listedd, ListedItem } from "@/data/marketplace"; // Import ListedItem interface
 import Activites from "@/components/marketplace/Activites";
-import Nano from "@/components/ton/Nano";
+import Nano from "@/components/Nano";
 
 interface TabPanelProps {
   children?: React.ReactNode;
