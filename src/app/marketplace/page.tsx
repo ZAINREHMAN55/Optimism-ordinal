@@ -353,7 +353,7 @@ const Marketplace = () => {
           </Box>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <Nano/>
+          <center>No listing</center>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
           <Activites />
