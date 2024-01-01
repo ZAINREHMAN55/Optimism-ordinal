@@ -21,6 +21,7 @@ import ListedTabs from "@/components/marketplace/ListedTab";
 import { listed, listedd, ListedItem } from "@/data/marketplace"; // Import ListedItem interface
 import Activites from "@/components/marketplace/Activites";
 import Nano from "@/components/Nano";
+import QuickListPopup from "@/components/marketplace/QuickListPopup";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -175,6 +176,14 @@ const Marketplace = () => {
 
     setCurrentPage(value);
   };
+  const [isQuickListOpen, setQuickListOpen] = React.useState(false);
+
+  // ... existing functions ...
+
+  const handleQuickListClick = () => {
+    setQuickListOpen(true);
+  };
+
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -268,9 +277,13 @@ const Marketplace = () => {
               </Select>
             </MarketPlaceSortSelect>
 
-            <button className="bg-[#0098ea]  hover:scale-10 text-[#fff] text-lg font-bold py-2 px-[24px] rounded-full  md:inline-flex hidden items-center">
-              Quick List
-            </button>
+            <button
+        onClick={handleQuickListClick}
+        className="bg-[#0098ea]  hover:scale-10 text-[#fff] text-lg font-bold py-2 px-[24px] rounded-full  md:inline-flex hidden items-center"
+      >
+        Quick List
+      </button>
+            <QuickListPopup open={isQuickListOpen} onClose={() => setQuickListOpen(false)} />
           </div>
         </Box>
 

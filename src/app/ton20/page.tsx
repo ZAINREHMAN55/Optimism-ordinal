@@ -61,6 +61,7 @@ const StyledRow = styled(TableRow)(({ theme }) => ({
   color: "transparent",
   transition: "background-color 0.3s ease",
 
+
   "&:hover": {
     backgroundColor: "#333",
   },
@@ -112,21 +113,36 @@ const TableHeader = () => (
 const TableRowComponent = ({ row }) => (
   <StyledRow>
     {/* can also use Dyanmic route like this `/ton20/${row.name}` */}
-     <Link style={{width:"100% "}} href={`/ton20/nano`}> 
-    <StyledCell component="th" scope="col" style={{ color: "#f6ae2d" }}>
-      {row.name}
+    <StyledCell align="left" scope="col">
+      <Link href={`/ton20/nano`} passHref>
+        <div>
+          <a style={{ color: "#f6ae2d" }}>{row.name}</a>
+        </div>
+      </Link>
     </StyledCell>
     <StyledCell align="center" scope="col">
-      {dayjs(row.deployTime).format("YYYY/MM/DD HH:mm:ss")}
+      <Link href={`/ton20/nano`} passHref>
+        <div>
+          <a >{dayjs(row.deployTime).format("YYYY/MM/DD HH:mm:ss")}</a>
+        </div>
+      </Link>
     </StyledCell>
     <StyledCell align="center" scope="col">
       <span className="mb-6">
-        {numeral(row.progress).divide(100).format("0.000%")}
+        <Link href={`/ton20/nano`} passHref>
+          <div>
+            <a>  {numeral(row.progress).divide(100).format("0.000%")}</a>
+          </div>
+        </Link>
       </span>
       <StyledLineBar variant="determinate" value={row.progress} />
     </StyledCell>
     <StyledCell align="right" scope="col">
-      {numeral(row.holders).format("0,0")}
+      <Link href={`/ton20/nano`} passHref>
+        <div>
+          <a >  {numeral(row.holders).format("0,0")}</a>
+        </div>
+      </Link>
     </StyledCell>
     <StyledCell
       align="right"
@@ -136,9 +152,13 @@ const TableRowComponent = ({ row }) => (
         alignItems: "flex-end",
       }}
     >
-      <IoIosArrowForward align="right" size={20} />
+      <Link href={`/ton20/nano`} passHref>
+        <div>
+
+          <a >   <IoIosArrowForward align="right" size={20} /></a>
+        </div>
+      </Link>
     </StyledCell>
-  </Link>
   </StyledRow>
 );
 

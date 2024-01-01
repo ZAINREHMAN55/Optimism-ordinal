@@ -133,7 +133,7 @@ function Nano() {
   };
 
   return (
-    <div>
+    <div className='m-16'>
       <span className="m-0 font-sans text-5xl leading-tight text-yellow-400 font-bold">nano</span>
       <div>
         <StyledProgressBar variant="determinate" value={100} />
