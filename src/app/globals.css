@@ -7,3 +7,6 @@
   background-color: #121212;
   font-family: monospace;
 }
+body {
+  overflow-y: hidden;
+}

@@ -5,7 +5,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/system';
-import { NumberInput } from '@mantine/core';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 
 const StyledDialog = styled(Dialog)({
   '.MuiDialog-paper': {
@@ -45,6 +47,7 @@ const StyledDialogActions = styled(DialogActions)({
   },
 });
 
+
 interface QuickListPopupProps {
   open: boolean;
   onClose: () => void;
@@ -55,14 +58,25 @@ const QuickListPopup: React.FC<QuickListPopupProps> = ({ open, onClose }) => {
     <StyledDialog open={open} onClose={onClose}>
       <StyledDialogTitle>
         <h1>Listing Confirmation
-</h1>
+        </h1>
       </StyledDialogTitle>
       <StyledDialogContent>
-        <div className='flex'>
-          <div>Tick</div>
-          <div></div>
+        <div className='flex gap-96'>
+          <div className='flex flex-col space-y-0.5'>
+            <span className='p-2'>Tick</span>
+            <span className='p-2'>Tick</span>
+            <span className='p-2'>Tick</span>
+          </div>
+          <div className='flex flex-col space-y-6'>
+            <Select labelId="label" id="select" value="20" className='text-white'>
+              <MenuItem value="10">nano</MenuItem>
+              <MenuItem value="20">bold20</MenuItem>
+              <MenuItem value="20">dedust.io</MenuItem>
+              <MenuItem value="20">grem</MenuItem>
+            </Select>
+            <p>0 nano</p>
+            </div>
         </div>
-        <p>This is the Quick List content.</p>
       </StyledDialogContent>
       <StyledDialogActions>
         <Button onClick={onClose}>Close</Button>
