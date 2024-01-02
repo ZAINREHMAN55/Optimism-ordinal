@@ -8,5 +8,8 @@
   font-family: monospace;
 }
 body {
-  overflow-y: hidden;
+  font-family: -apple-system, monospace, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+input#outlined-basic{
+  border: solid 1px white;
 }
